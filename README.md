@@ -6,7 +6,7 @@ A folly demo based on existed folly test code
 
 * Download/clone folly original code and build/install them
 	* Usually installed to `~/folly`
-	* build `gtest-1.7.0` and build it, copy to ~/gtest-1.7.0 (gtest not allowed to `make install`)
+	* build `gtest-1.7.0`, copy to ~/gtest-1.7.0 (gtest not allowe `make install`)
 
 * Update `~/.bashrc`, add following two export(assume current home is `/root`)
 	* `export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/root/folly/lib`
@@ -55,5 +55,6 @@ Test linking:
 	libm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007f7092fbf000)
 
 Run:
+
 	$ ./a.out
 	OK
