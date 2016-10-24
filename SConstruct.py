@@ -1,4 +1,5 @@
 import sys
+import os
 
 AddOption('--s', dest='src', type='string', nargs=1, action='store', help='src file to be build')
 
@@ -10,22 +11,22 @@ if src == '':
 env = Environment()
 
 env['CXX'] = 'g++'
-#env['CXX'] = 'clang++-3.5'
+#env['CXX'] = 'clang++-3.8'
 env['CPPFLAGS'] = [
     '-std=c++1y',
-    '-g',
-    '-O0',
+    #'-g',
+    '-O3',
     '-Wall',
-    #'-static'
+    '-static',
     ]
 env['CPPPATH'] = [
     '/usr/include/',
-    '/root/folly/include',
+    '/usr/local/include/',
     '/root/gtest-1.7.0/include/',
     ]
 env['LIBPATH'] = [
     '/root/gtest-1.7.0/lib/.libs/',
-    '/root/folly/lib/',
+    '/usr/local/lib/',
     ]
 env['LIBS'] = [
     'gtest',
@@ -33,6 +34,7 @@ env['LIBS'] = [
     #   http://stackoverflow.com/a/21116684/342348
     'pthread',
     'folly',
+    'glog',
     ]
 
 env.Program('a.out', [src, ])
